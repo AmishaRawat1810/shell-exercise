@@ -23,6 +23,7 @@ grep -o '[^,!]\+$' finalSrk.csv | sort | uniq -c | sort -n | tail -n1
 
 8. What is the most frequently occurring first word amongst all the movie titles in which SRK has acted?
 grep -i "actor" finalSrk.csv | cut -d',' -f1 | grep -o "^[a-zA-Z]\+ " | sort | uniq -c | sort | tail -n1
+grep -i "actor" finalSrk.csv | grep -o "^[^+, ]\+" | sort | uniq -c | sort | tail -n1
 
 9. Most frequently occurring word in SRK titles. Amongst ALL the words
 cut -d',' -f1 | sort | tr -s ' ' '\n' | sort | uniq -c | sort -s -nk1 | tail -n1
